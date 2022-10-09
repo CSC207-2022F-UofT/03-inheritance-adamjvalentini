@@ -5,7 +5,43 @@
  * You may find the readings in chapter 3. Relationships between Classes
  * helpful while working through this exercise.
  */
+public class CrossbodyBag extends Bag{
 
+    /**
+     * Creates a new CrossbodyBag with the given color,
+     * capacity, and the number of straps
+     *
+     *
+     *
+     *
+     */
+    int numberOfStraps;
+    public CrossbodyBag(String color, int capacity, int numberOfStrap){
+        super(color, capacity);
+        this.numberOfStraps = numberOfStrap;
+
+    }
+    public int getNumberOfStraps(){
+        return this.numberOfStraps;
+    }
+
+    @Override
+    public void enhance() {
+        /* TODO: Implement this method.
+         *       You may want to use the increaseCapacity() method that was
+         *       implemented in Bag.
+         *
+         * To call a method defined in a parent, you use super.method_name(...)
+         */
+        super.increaseCapacity(2);
+    }
+    @Override
+    public String toString() {
+
+        return super.getColor() + " Crossbody Bag with " + this.numberOfStraps + " straps (" + super.getNumberOfContents() +
+                " / " + super.getCapacity() + ")";
+    }
+}
 /*
  * TODO: Create a public class named CrossbodyBag which is a subclass of Bag
  *       In addition to the attributes in Bag, the CrossbodyBag should have an
@@ -16,6 +52,7 @@
  *           1. a String for the color
  *           2. an int for the capacity
  *           3. an int for the number of straps
+ *
  *
  *       CrossbodyBag should also have a getter method called getNumberOfStraps
  *       and it should implement the enhance method.

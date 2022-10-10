@@ -143,6 +143,12 @@ public abstract class Bag {
     public void increaseCapacity(int n) {
         // TODO: Implement this method.
         this.capacity = this.capacity + n;
+        String[] newlst = new String[this.capacity];
+        for (int i = 0; i < this.contents.length; i++){
+            newlst[i] = this.contents[i];
+
+        }
+        this.contents = newlst;
 
     }
 
@@ -151,7 +157,7 @@ public abstract class Bag {
      * This method requires you to have created the private
      * instance variables mentioned above.
      *
-     * @return
+     * @return a string representation of this Bag
      */
     @Override
     public String toString() {
